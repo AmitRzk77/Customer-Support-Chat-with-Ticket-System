@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home - LiveHelp</title>
+</head>
+<body>
+    <h1>Welcome {{ user.username }}</h1>
+    <p>
+        {% if user.is_staff %}
+            You are logged in as Admin. <a href="{% url 'account:admin_logout' %}">Logout</a>
+        {% else %}
+            You are logged in as Customer. <a href="{% url 'account:customer_logout' %}">Logout</a>
+        {% endif %}
+    </p>
+</body>
+</html>
